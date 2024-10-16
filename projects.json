@@ -1,0 +1,108 @@
+{
+  "include_images": true,
+  "projects": [
+    {
+      "title": "Project 1",
+      "description": "This is the description for project 1, which is focused on JavaScript and CSS development.",
+      "date": "2024-09-01",
+      "tags": ["JavaScript", "CSS"],
+      "images": [
+        "https://via.placeholder.com/150/0000FF/808080?text=Project+1+Image+1",
+        "https://via.placeholder.com/150/FF0000/FFFFFF?text=Project+1+Image+2"
+      ],
+      "link": "https://example.com/project1",
+      "notes": "This project is primarily focused on frontend development."
+    },
+    {
+      "title": "ZZ zzz z zProject 2",
+      "description": "This project is about PHP and HTML development.",
+      "date": "2024-08-15",
+      "tags": ["PHP", "HTML", "Css"],
+      "images": [
+        "https://via.placeholder.com/150/00FF00/000000?text=Project+2"
+      ],
+      "link": "https://example.com/project2",
+      "notes": "The main focus was server-side scripting using PHP."
+    },
+    {
+      "title": "Project 3",
+      "description": "A Python project dealing with data processing and machine learning.",
+      "date": "2023-xx-xx",
+      "tags": ["Python", "Machine Learning"],
+      "images": [],
+      "link": "https://example.com/project3",
+      "notes": "This project involves data preprocessing and model training."
+    },
+    {
+      "title": "Project 4",
+      "description": "This project is a React application for a web dashboard. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Donec nec nunc nec nunc. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Donec nec nunc nec nunc.",
+      "date": "2024-07-10",
+      "tags": ["React", "JavaScript", "UI"],
+      "images": [
+        "https://via.placeholder.com/150/FFFF00/000000?text=Project+4"
+      ],
+      "link": "https://example.com/project4",
+      "notes": "Designed for building a user-friendly web dashboard."
+    },
+    {
+      "title": "Project 5",
+      "description": "An Android app developed using Kotlin and Jetpack Compose.",
+      "date": "2023-06-xx",
+      "tags": ["Kotlin", "Android"],
+      "images": [],
+      "link": "https://example.com/project5",
+      "notes": "Focused on modern Android app development techniques."
+    },
+    {
+      "title": "Azereje Project 6",
+      "description": "A Node.js project for API development and microservices.",
+      "date": "2022-xx-15",
+      "tags": ["Node.js", "API", "Microservices"],
+      "images": [
+        "https://via.placeholder.com/150/008080/FFFFFF?text=Project+6"
+      ],
+      "link": "https://example.com/project6",
+      "notes": "Microservices architecture built using Node.js."
+    },
+    {
+      "title": "Project 7",
+      "description": "A Vue.js project for an interactive web app.",
+      "date": "2024-05-20",
+      "tags": ["Vue.js", "JavaScript"],
+      "images": [
+        "https://via.placeholder.com/150/FF4500/000000?text=Project+7"
+      ],
+      "link": "https://example.com/project7",
+      "notes": ""
+    },
+    {
+      "title": "Cadel as Project 8",
+      "description": "A Ruby on Rails project for a blog platform.",
+      "date": "2022-03-xx",
+      "tags": ["Ruby on Rails", "Web Development"],
+      "images": [],
+      "link": "https://example.com/project8",
+      "notes": ""
+    },
+    {
+      "title": "Project 9",
+      "description": "A Flutter project for cross-platform mobile app development.",
+      "date": "2021-11-xx",
+      "tags": ["Flutter", "Mobile Development"],
+      "images": [
+        "https://via.placeholder.com/150/800080/FFFFFF?text=Project+9"
+      ],
+      "link": "https://example.com/project9",
+      "notes": "Built using Flutter for cross-platform compatibility."
+    },
+    {
+      "title": "Project 10",
+      "description": "A WordPress project focused on building themes and plugins.",
+      "date": "2020-xx-xx",
+      "tags": ["WordPress", "PHP", "Web Development"],
+      "images": [],
+      "link": "https://example.com/project10",
+      "notes": ""
+    }
+  ]
+}

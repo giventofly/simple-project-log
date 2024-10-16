@@ -1,0 +1,143 @@
+$font-family: "Montserrat", sans-serif;
+$background-color: #282a36;
+$text-color: #f8f8f2;
+$primary-color: #6272a4;
+$hover-color: #44475a;
+$tag-background-color: #50fa7b;
+$tag-text-color: #282a36;
+$line-color: #888888;
+
+body {
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3 {
+  color: $text-color;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.filter {
+  .select {
+    padding: 10px;
+    background-color: $hover-color;
+    color: $text-color;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+.project-card {
+  background-color: $hover-color;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex; // Flexbox to align image and content side by side
+
+  .image-container {
+    flex: 0 0 30%; // Image takes 30% of the width
+    margin-right: 20px;
+  }
+
+  .project-details {
+    flex: 1;
+  }
+
+  .tags {
+    margin-top: 10px;
+
+    .tag {
+      padding: 5px;
+      border-radius: 3px;
+      margin-right: 5px;
+      display: inline-block;
+      background-color: $tag-background-color;
+      color: $tag-text-color;
+    }
+  }
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain; // Ensure the image does not stretch
+  display: none; // All images hidden by default
+
+  &.active {
+    display: block; // Only the active image is displayed
+  }
+}
+
+.slider-container {
+  position: relative;
+
+  button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    transform: translateY(-50%);
+
+    &.prev {
+      left: 0;
+    }
+
+    &.next {
+      right: 0;
+    }
+  }
+}
+
+/* Style the section separator */
+.section-separator {
+  display: flex;
+  align-items: center; // Vertically center the text and line
+  font-size: 1.5rem;
+  color: $line-color; // Grey color for text
+  margin: 30px 0; // Add some space above and below the separator
+
+  &::after {
+    content: "";
+    flex-grow: 1; // Make the line fill the remaining space to the right
+    height: 1px;
+    background-color: $line-color; // Grey color for line
+    margin-left: 10px; // Space between text and line
+  }
+}
