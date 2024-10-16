@@ -17,7 +17,7 @@
       "title": "ZZ zzz z zProject 2",
       "description": "This project is about PHP and HTML development.",
       "date": "2024-08-15",
-      "tags": ["PHP", "HTML", "Css"],
+      "tags": ["PHP", "HTML", "Css", "MySQL"],
       "images": [
         "https://via.placeholder.com/150/00FF00/000000?text=Project+2"
       ],

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Log</title>
+  <!-- Load Google Fonts and custom CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Project Log</h1>
+
+    <!-- Sorting buttons -->
+    <div class="button-group">
+      <button id="sort-title" class="button" onclick="toggleSort('title')">Sort by Title <span id="title-arrow">▲</span></button>
+      <button id="sort-date" class="button" onclick="toggleSort('date')">Sort by Date <span id="date-arrow">▲</span></button>
+    </div>
+
+    <!-- Filter by tag -->
+    <div class="filter">
+      <select id="filter-tag" class="select" onchange="filterProjects()">
+        <option value="">All Tags</option><option value='JavaScript'>JavaScript</option><option value='CSS'>CSS</option><option value='PHP'>PHP</option><option value='HTML'>HTML</option><option value='Css'>Css</option><option value='React'>React</option><option value='UI'>UI</option><option value='Vue.js'>Vue.js</option><option value='Python'>Python</option><option value='Machine Learning'>Machine Learning</option><option value='Kotlin'>Kotlin</option><option value='Android'>Android</option><option value='Node.js'>Node.js</option><option value='API'>API</option><option value='Microservices'>Microservices</option><option value='Ruby on Rails'>Ruby on Rails</option><option value='Web Development'>Web Development</option><option value='Flutter'>Flutter</option><option value='Mobile Development'>Mobile Development</option><option value='WordPress'>WordPress</option>      </select>
+    </div>
+
+    <div id="project-list">      <div class="project-card" data-title="Project 1" data-date="2024-09-01" data-tags="JavaScript,CSS">
+        <div class="project-content">
+          <div class="image-container"><div class="slider-container"><img src='https://via.placeholder.com/150/0000FF/808080?text=Project+1+Image+1' class='project-image active' alt='Project 1'><img src='https://via.placeholder.com/150/FF0000/FFFFFF?text=Project+1+Image+2' class='project-image ' alt='Project 1'>              <button class="prev" onclick="showPrevImage(this)">&#10094;</button>
+              <button class="next" onclick="showNextImage(this)">&#10095;</button>
+            </div></div>
+          <div class="project-details">
+            <h3 class="project-title">Project 1</h3>
+            <p>2024-09</p>
+            <p>This is the description for project 1, which is focused on JavaScript and CSS development.</p><p class='notes'><strong>Notes:</strong> This project is primarily focused on frontend development.</p>            <div class="tags"><span class='tag' style='background-color: #8be9fd;'>JavaScript</span> <span class='tag' style='background-color: #50fa7b;'>CSS</span> </div>
+            <a href="https://example.com/project1" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="ZZ zzz z zProject 2" data-date="2024-08-15" data-tags="PHP,HTML,Css">
+        <div class="project-content">
+          <div class="image-container"><img src='https://via.placeholder.com/150/00FF00/000000?text=Project+2' class='project-image' alt='ZZ zzz z zProject 2'></div>
+          <div class="project-details">
+            <h3 class="project-title">ZZ zzz z zProject 2</h3>
+            <p>2024-08</p>
+            <p>This project is about PHP and HTML development.</p><p class='notes'><strong>Notes:</strong> The main focus was server-side scripting using PHP.</p>            <div class="tags"><span class='tag' style='background-color: #ffb86c;'>PHP</span> <span class='tag' style='background-color: #ff79c6;'>HTML</span> <span class='tag' style='background-color: #bd93f9;'>Css</span> </div>
+            <a href="https://example.com/project2" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Project 4" data-date="2024-07-10" data-tags="React,JavaScript,UI">
+        <div class="project-content">
+          <div class="image-container"><img src='https://via.placeholder.com/150/FFFF00/000000?text=Project+4' class='project-image' alt='Project 4'></div>
+          <div class="project-details">
+            <h3 class="project-title">Project 4</h3>
+            <p>2024-07</p>
+            <p>This project is a React application for a web dashboard. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Donec nec nunc nec nunc. lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc. Donec nec nunc nec nunc.</p><p class='notes'><strong>Notes:</strong> Designed for building a user-friendly web dashboard.</p>            <div class="tags"><span class='tag' style='background-color: #ff5555;'>React</span> <span class='tag' style='background-color: #8be9fd;'>JavaScript</span> <span class='tag' style='background-color: #f1fa8c;'>UI</span> </div>
+            <a href="https://example.com/project4" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Project 7" data-date="2024-05-20" data-tags="Vue.js,JavaScript">
+        <div class="project-content">
+          <div class="image-container"><img src='https://via.placeholder.com/150/FF4500/000000?text=Project+7' class='project-image' alt='Project 7'></div>
+          <div class="project-details">
+            <h3 class="project-title">Project 7</h3>
+            <p>2024-05</p>
+            <p>A Vue.js project for an interactive web app.</p>            <div class="tags"><span class='tag' style='background-color: #8be9fd;'>Vue.js</span> <span class='tag' style='background-color: #8be9fd;'>JavaScript</span> </div>
+            <a href="https://example.com/project7" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Project 3" data-date="2023-xx-xx" data-tags="Python,Machine Learning">
+        <div class="project-content">
+          <div class="image-container"></div>
+          <div class="project-details">
+            <h3 class="project-title">Project 3</h3>
+            <p>2023</p>
+            <p>A Python project dealing with data processing and machine learning.</p><p class='notes'><strong>Notes:</strong> This project involves data preprocessing and model training.</p>            <div class="tags"><span class='tag' style='background-color: #50fa7b;'>Python</span> <span class='tag' style='background-color: #ffb86c;'>Machine Learning</span> </div>
+            <a href="https://example.com/project3" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Project 5" data-date="2023-06-xx" data-tags="Kotlin,Android">
+        <div class="project-content">
+          <div class="image-container"></div>
+          <div class="project-details">
+            <h3 class="project-title">Project 5</h3>
+            <p>2023</p>
+            <p>An Android app developed using Kotlin and Jetpack Compose.</p><p class='notes'><strong>Notes:</strong> Focused on modern Android app development techniques.</p>            <div class="tags"><span class='tag' style='background-color: #ff79c6;'>Kotlin</span> <span class='tag' style='background-color: #bd93f9;'>Android</span> </div>
+            <a href="https://example.com/project5" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Azereje Project 6" data-date="2022-xx-15" data-tags="Node.js,API,Microservices">
+        <div class="project-content">
+          <div class="image-container"><img src='https://via.placeholder.com/150/008080/FFFFFF?text=Project+6' class='project-image' alt='Azereje Project 6'></div>
+          <div class="project-details">
+            <h3 class="project-title">Azereje Project 6</h3>
+            <p>2022</p>
+            <p>A Node.js project for API development and microservices.</p><p class='notes'><strong>Notes:</strong> Microservices architecture built using Node.js.</p>            <div class="tags"><span class='tag' style='background-color: #ff5555;'>Node.js</span> <span class='tag' style='background-color: #f1fa8c;'>API</span> <span class='tag' style='background-color: #8be9fd;'>Microservices</span> </div>
+            <a href="https://example.com/project6" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Cadel as Project 8" data-date="2022-03-xx" data-tags="Ruby on Rails,Web Development">
+        <div class="project-content">
+          <div class="image-container"></div>
+          <div class="project-details">
+            <h3 class="project-title">Cadel as Project 8</h3>
+            <p>2022</p>
+            <p>A Ruby on Rails project for a blog platform.</p>            <div class="tags"><span class='tag' style='background-color: #50fa7b;'>Ruby on Rails</span> <span class='tag' style='background-color: #ffb86c;'>Web Development</span> </div>
+            <a href="https://example.com/project8" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Project 9" data-date="2021-11-xx" data-tags="Flutter,Mobile Development">
+        <div class="project-content">
+          <div class="image-container"><img src='https://via.placeholder.com/150/800080/FFFFFF?text=Project+9' class='project-image' alt='Project 9'></div>
+          <div class="project-details">
+            <h3 class="project-title">Project 9</h3>
+            <p>2021</p>
+            <p>A Flutter project for cross-platform mobile app development.</p><p class='notes'><strong>Notes:</strong> Built using Flutter for cross-platform compatibility.</p>            <div class="tags"><span class='tag' style='background-color: #ff79c6;'>Flutter</span> <span class='tag' style='background-color: #bd93f9;'>Mobile Development</span> </div>
+            <a href="https://example.com/project9" class="button">View Project</a>
+          </div>
+        </div>
+      </div>      <div class="project-card" data-title="Project 10" data-date="2020-xx-xx" data-tags="WordPress,PHP,Web Development">
+        <div class="project-content">
+          <div class="image-container"></div>
+          <div class="project-details">
+            <h3 class="project-title">Project 10</h3>
+            <p>2020</p>
+            <p>A WordPress project focused on building themes and plugins.</p>            <div class="tags"><span class='tag' style='background-color: #ff5555;'>WordPress</span> <span class='tag' style='background-color: #ffb86c;'>PHP</span> <span class='tag' style='background-color: #ffb86c;'>Web Development</span> </div>
+            <a href="https://example.com/project10" class="button">View Project</a>
+          </div>
+        </div>
+      </div>    </div>
+  </div>
+
+</body>
+</html>
