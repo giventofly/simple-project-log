@@ -21,7 +21,7 @@
       "date": "2022-09-10",
       "tags": [],
       "images": [],
-      "link": "https://example.com/project2",
+      "link": "https://example.com/",
       "notes": ""
     },
     {
@@ -30,7 +30,7 @@
       "date": "2024-09-xx",
       "tags": ["Python", "Machine Learning"],
       "images": [],
-      "link": "https://example.com/project3",
+      "link": "https://example.com/",
       "notes": "This was not finished because something something... - reason to not finish it."
     },
     {
@@ -44,7 +44,7 @@
         "https://via.placeholder.com/350/000000/FFFFFF?text=Project+1+Image+3",
         "https://via.placeholder.com/350/00FF00/000000?text=Project+1+Image+4"
       ],
-      "link": "https://example.com/project4",
+      "link": "https://example.com",
       "notes": ""
     },
     {
