@@ -21,6 +21,11 @@ jobs:
     - name: Run generate.php
       run: php generate.php  # Run the PHP script to generate the HTML file
 
+    - name: Set Git configuration
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+    
     - name: Check for changes
       run: |
         git add index.html
