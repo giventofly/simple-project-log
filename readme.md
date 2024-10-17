@@ -1,3 +1,10 @@
+
+# Simple Project Log
+
+This project is designed to automatically generate an HTML page from a `projects.json` file every time a push is made to the repository. The HTML page displays a list of projects, each with its title, description, date, tags, and images. This process is automated using GitHub Actions, which runs the PHP script (`generate.php`) to generate the HTML file.
+
+You can also run it locally and put the generate html file in a server.
+
 <!-- vscode-markdown-toc -->
 * 1. [How It Works](#HowItWorks)
 * 2. [Adding a Project](#AddingaProject)
@@ -18,11 +25,6 @@
 	autoSave=true
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
-# Simple Project Log
-
-This project is designed to automatically generate an HTML page from a `projects.json` file every time a push is made to the repository. The HTML page displays a list of projects, each with its title, description, date, tags, and images. This process is automated using GitHub Actions, which runs the PHP script (`generate.php`) to generate the HTML file.
-
-You can also run it locally and put the generate html file in a server.
 
 ##  1. <a name='HowItWorks'></a>How It Works
 
