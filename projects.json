@@ -12,7 +12,7 @@
       "images": [
         "https://raw.githubusercontent.com/giventofly/simple-project-log/refs/heads/main/assets/simple.png"
       ],
-      "link": "https://example.com/project1",
+      "link": "https://github.com/giventofly/simple-project-log",
       "notes": "Needs some improvements and maybe a bit of a reorganization. Add a  status to projects (mvp, blocked, live, close, ...). Some things in folders, page generated in a different folder, minify+css compiling via actions too. Some ux improvements for tags selection"
     },
     {
@@ -53,7 +53,7 @@
       "date": "2023-10-xx",
       "tags": ["JavaScript", "CSS"],
       "images": [
-        "https://via.placeholder.com/350/0000FF/F08080?text=Project+1+Image+1"
+        "https://raw.githubusercontent.com/giventofly/simple-project-log/refs/heads/main/assets/simple.png"
       ],
       "link": "",
       "notes": ""
