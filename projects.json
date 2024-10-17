@@ -41,8 +41,8 @@
       "images": [
         "https://via.placeholder.com/350/0000FF/F08080?text=Project+1+Image+1",
         "https://via.placeholder.com/350/FF0000/FFFFFF?text=Project+1+Image+2",
-        "https://via.placeholder.com/350/000000/FFFFFF?text=Project+1+Image+3",
-        "https://via.placeholder.com/350/00FF00/000000?text=Project+1+Image+4"
+        "https://via.placeholder.com/350/000000/FFFFFF?text=Project+1+Image+3"
+      
       ],
       "link": "https://example.com",
       "notes": ""
