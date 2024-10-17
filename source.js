@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectList = document.getElementById("project-list");
   let projects = Array.from(document.querySelectorAll('.project-card'));
   let sortOrder = { title: 'asc', date: 'asc' }; // Track the current sort order
-  let currentFilter = false; // Track if we are filtering by tags
+  //let currentFilter = false; // Track if we are filtering by tags
 
   // Sorting function
   function sortProjects(key, order) {
-    currentFilter = false; // Reset filter tracking when sorting
+    //currentFilter = false; // Reset filter tracking when sorting
     projects.sort((a, b) => {
       let valA = a.dataset[key];
       let valB = b.dataset[key];
@@ -35,22 +35,24 @@ document.addEventListener("DOMContentLoaded", () => {
       const val = project.dataset[sortKey];
       let section = '';
 
-      if (!currentFilter) { // Only add section titles when not filtering by tags
         if (sortKey === 'date') {
           section = val.substr(0, 4); // Use year as section
         } else if (sortKey === 'title') {
           section = val.charAt(0).toUpperCase(); // Use first letter of title as section
         }
+        else {
+          section = project.dataset.date.substr(0, 4);
+        }
+        
 
         // Add section separator if the section has changed and we're not filtering by tags
-        if (section !== lastSection && section !== '') {
+        if (section !== lastSection) {
           lastSection = section;
           const separator = document.createElement('h2');
           separator.className = 'section-separator';
           separator.textContent = section;
           projectList.appendChild(separator);
         }
-      }
 
       projectList.appendChild(project); // Append the project card
     });
@@ -59,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Filter function to filter by tag
   function filterProjects() {
     const selectedTag = document.getElementById('filter-tag').value.trim();
-    currentFilter = selectedTag !== ''; // If a tag is selected, enable filtering
+    //currentFilter = selectedTag !== ''; // If a tag is selected, enable filtering
 
     projects.forEach(project => {
       const projectTags = project.getAttribute('data-tags').split(',');
@@ -116,4 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Expose the functions globally
   window.toggleSort = toggleSort;
   window.filterProjects = filterProjects;
+
+  sortProjects('date', 'desc'); // Initial sort by date
+  document.getElementById('filter-tag').value = ''; // Clear the tag filter input
 });
