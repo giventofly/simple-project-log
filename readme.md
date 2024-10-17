@@ -1,11 +1,30 @@
+<!-- vscode-markdown-toc -->
+* 1. [How It Works](#HowItWorks)
+* 2. [Adding a Project](#AddingaProject)
+* 3. [Site-Wide Configuration](#Site-WideConfiguration)
+	* 3.1. [Customizing the Style](#CustomizingtheStyle)
+	* 3.2. [Page interactions (javascript)](#Pageinteractionsjavascript)
+	* 3.3. [Sample Project Entry](#SampleProjectEntry)
+* 4. [GitHub Actions Configuration](#GitHubActionsConfiguration)
+	* 4.1. [Workflow Setup (`.github/workflows/generate-html.yml`)](#WorkflowSetup.githubworkflowsgenerate-html.yml)
+* 5. [Enable GitHub Pages](#EnableGitHubPages)
+	* 5.1. [Setting Up a Custom Domain (CNAME)](#SettingUpaCustomDomainCNAME)
+	* 5.2. [Step 1: Set up CNAME](#Step1:SetupCNAME)
+	* 5.3. [Step 2: Configure DNS](#Step2:ConfigureDNS)
+	* 5.4. [Enable GitHub Pages](#EnableGitHubPages-1)
 
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 # Simple Project Log
 
 This project is designed to automatically generate an HTML page from a `projects.json` file every time a push is made to the repository. The HTML page displays a list of projects, each with its title, description, date, tags, and images. This process is automated using GitHub Actions, which runs the PHP script (`generate.php`) to generate the HTML file.
 
 You can also run it locally and put the generate html file in a server.
 
-## How It Works
+##  1. <a name='HowItWorks'></a>How It Works
 
 TLDR: edit projects.json, open generate.php, it will generate the index.html file, done!
 
@@ -17,7 +36,7 @@ It is ready to run, just edit the project.json and it will work, you can althoug
 
 ---
 
-## Adding a Project
+##  2. <a name='AddingaProject'></a>Adding a Project
 
 To add a new project to the log, follow these steps:
 
@@ -33,7 +52,7 @@ To add a new project to the log, follow these steps:
 
 All the text will be converted to paragraphs based on 300 characters or 3 ponctuation marks, the one that comes first.
 
-## Site-Wide Configuration
+##  3. <a name='Site-WideConfiguration'></a>Site-Wide Configuration
 
 In addition to individual projects, you can configure the entire site with the following fields in the `projects.json` file:
 
@@ -66,11 +85,11 @@ Here’s an example of a configuration with these fields:
   ]
 }
 ```
-### Customizing the Style
+###  3.1. <a name='CustomizingtheStyle'></a>Customizing the Style
 
 The css used for the index is located on style.css (or the minified version style.min.js), you can change it to your liking or you also have the option to edit the style.scss file (don't forget you need to generate the css file after editing the scss file).
 
-### Page interactions (javascript)
+###  3.2. <a name='Pageinteractionsjavascript'></a>Page interactions (javascript)
 
 The page has a few interactions, you can click to sort by title or date, or click on the tags dropdown to filter the projects by tag. You can edit the `app.min.js` file (it is a minified and transpiled version) or use the source.js file to make your changes and run in the terminal 'gulp minjs'.
 
@@ -78,7 +97,7 @@ You will need to do `npm install` and then to update do `gulp minjs` to generate
 
 ---
 
-### Sample Project Entry
+###  3.3. <a name='SampleProjectEntry'></a>Sample Project Entry
 
 Here’s an example of what a project entry in `projects.json` might look like:
 
@@ -97,11 +116,11 @@ Here’s an example of what a project entry in `projects.json` might look like:
 }
 ```
 
-## GitHub Actions Configuration
+##  4. <a name='GitHubActionsConfiguration'></a>GitHub Actions Configuration
 
 The process of generating the `index.html` file is automated using GitHub Actions. Here’s how it’s set up:
 
-### Workflow Setup (`.github/workflows/generate-html.yml`)
+###  4.1. <a name='WorkflowSetup.githubworkflowsgenerate-html.yml'></a>Workflow Setup (`.github/workflows/generate-html.yml`)
 
 A GitHub Actions workflow file (`generate-html.yml`) is configured to automatically run every time a push is made to the repository. It triggers the `generate.php` script, which reads the `projects.json` file, generates an `index.html` file, and pushes the changes back to the repository.
 
@@ -148,7 +167,7 @@ Steps to Set Up
 	3.	Ensure your projects.json file is correctly formatted with the necessary project details.
 	4.	When you push new changes (such as adding a new project), GitHub Actions will automatically run, and the index.html file will be updated with the latest project details.
 
-## Enable GitHub Pages
+##  5. <a name='EnableGitHubPages'></a>Enable GitHub Pages
 
 1. In your repository, go to **Settings** > **Pages**.
 2. Under **Source**, choose the branch where your HTML is being generated (typically `main`).
@@ -157,17 +176,17 @@ Steps to Set Up
 Now, GitHub Pages will serve your site on the custom domain you’ve configured.
 
 
-### Setting Up a Custom Domain (CNAME)
+###  5.1. <a name='SettingUpaCustomDomainCNAME'></a>Setting Up a Custom Domain (CNAME)
 
 If you want to use a custom domain to serve your GitHub Pages (for example, `project-log.josemoreira.pt`), follow these steps:
 
-### Step 1: Set up CNAME
+###  5.2. <a name='Step1:SetupCNAME'></a>Step 1: Set up CNAME
 
 1. In the root of your repository, create a file named `CNAME`.
 2. Add your custom domain to the `CNAME` file. For example: project-log.josemoreira.pt
 3. Commit the `CNAME` file to your repository.
 
-### Step 2: Configure DNS
+###  5.3. <a name='Step2:ConfigureDNS'></a>Step 2: Configure DNS
 
 You need to configure your domain’s DNS to point to GitHub Pages. Add the following DNS records at your domain registrar’s settings:
 
@@ -175,7 +194,7 @@ You need to configure your domain’s DNS to point to GitHub Pages. Add the foll
 - **Name**: `project-log` (or leave it empty to point the root domain)
 - **Target**: `username.github.io` (replace `username` with your GitHub username)
 
-### Enable GitHub Pages
+###  5.4. <a name='EnableGitHubPages-1'></a>Enable GitHub Pages
 
 1. In your repository, go to **Settings** > **Pages**.
 2. Under **Custom domain**, add your domain (e.g., `project-log.josemoreira.pt`).
